@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>weather station</title>
+        <script src="https://maps.googleapis.com/maps/api/js?key=API-KEY"></script>
+        <script type="text/javascript">
+            function initialize() {
+                var posi = {lat: -25.363, lng: 131.044};
+
+                var mapOP = {
+                    center: posi,
+                    zoom: 8,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var marker = new google.maps.Marker({
+                    position: {lat: -25.363, lng: 131.044},
+                    map: map,
+                    title: 'Hello World!'
+                    });
+      
+
+                var map = new google.maps.Map(document.getElementById("map"), mapOP);
+            }
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div id="map" style="width:100%; height:100%"></div>
+    </body>
+</html>
