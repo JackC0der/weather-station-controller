@@ -34,13 +34,20 @@ function consultarDados(estacao, paramters){
         }
     }
 
-    for (i=0;i<dados.length;i++){
+    if (paramters[0] == undefined && paramters[1] == undefined &&paramters[2] == undefined && paramters[3] == undefined && paramters[4] == undefined){
 
-        if (dados[i]["date"] == paramters[0] || dados[i]["time"] == paramters[1] || dados[i]["velocity"] == paramters[2] || dados[i]["direction"] == paramters[3] || dados[i]["rainfall_level"] == paramters[4]){
+        for (i=0;i<dados.length;i++){
 
-            result.push(dados[i]);
+            if (dados[i]["date"] == paramters[0] || dados[i]["time"] == paramters[1] || dados[i]["velocity"] == paramters[2] || dados[i]["direction"] == paramters[3] || dados[i]["rainfall_level"] == paramters[4]){
+
+                result.push(dados[i]);
+
+            }
 
         }
+    }else{
+
+        result.push(dados[dados.length-1])
 
     }
 
